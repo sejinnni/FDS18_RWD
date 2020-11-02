@@ -12,25 +12,38 @@ body{
 
 /* 헤더 */
 /* 공통 헤더 */
-.app-header-container{
+
+/* .app-header-container{
   background-color:yellow;
-}
+} */
 .app-header{
-  background-color: pink;
+  background-color: #fff;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
 }
-
+/* 공통 로고 */
+.brand{
+  width: 176px;
+  /* height: 14px; */
+  margin: 0;
+  padding: 18px;
+  font-size: 14px;
+  /* 1rem 또는 brand a에 font-size 값을 주어도 된다. */
+}
+.brand a{
+  display: block;
+}
 
 @media all and (max-width:767px){
   /* 모바일 헤더 */
-
+  
   /* 햄버거 메뉴 */
   .is-open-menu{
-    width: 50%;
+    width: 50px;
     height: 50px;
+    padding: 18px 16px;
     background-color: transparent;
     padding: 0;
   }
@@ -38,17 +51,50 @@ body{
     display: inline-block;
     width: 100%;
     height: 100%;
-    background: violet url(./../images/button-navigation.svg) no-repeat 50% 50%;
+    background: url(./../images/button-navigation.svg) no-repeat 50% 50%;
   }
   /* 모바일 네비게이션 */
   .app-navigation {
-    display: none;
+    transform: translateX(105vw);
     position: fixed;
     top: 0;
     left: 0;
     width:100vw;
     height: 100vh;
-    background-color: lightgreen;
+    transition: all 0.2s;
+    background: hsla(225, 57%, 10%, 0.9);
+    color: #fefefe;
+    backdrop-filter: blur(5px);
+    padding-top: 66px;
+  }
+  .is-close-menu{
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    color:#fefefe;
+    font-size: 2rem;
+  }
+  .is--active .app-navigation{
+    transform: none;
+  }
+  .app-navigation li {
+    border-bottom: 1px solid hsla(225, 57%, 30%, 0.5);
+  }
+  .app-navigation li:last-child{
+    border-bottom: 0; 
+  }
+  .app-navigation a {
+    display: block;
+    padding: 12px 22px;
+    transition: all 0.4s ease;
+  }
+  .app-navigation a:hover,
+  .app-navigation a:focus {
+    background: #2e437c;
+    /* 마우스 올리면 이 색으로 0.4초 안에 칠해질 것이다. */
   }
 }
 
@@ -71,7 +117,12 @@ body{
   .app-navigation ul{
     display: flex;
     flex-flow: row nowrap;
-    
+    /* padding으로 주는 것보다 margin이 좋은 이유는 구분 영역이 명확히 존재하지 않기 때문에
+    마우스 커서를 올렸을 때 선택하는 영역이 불분명해질 수 있다.  */
+  }
+  .app-navigation li{
+    margin-left: 8px;
+    color: #24388d;
   }
 }
 
