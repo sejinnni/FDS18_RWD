@@ -1,0 +1,248 @@
+/* 기본 레이아웃 */
+body{
+  display: flex;
+  flex-flow: row wrap;
+}
+.app-header-container,
+.app-main,
+.app-footer{
+  width: 100%;
+}
+/* 공통 헤더 */
+.app-header{
+  background-color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 공통 로고 */
+.brand{
+  width: 176px;
+  /* height: 14px; */
+  padding: 18px;
+  margin:0;
+  font-size: 14px;
+}
+.brand a{
+  display: block;
+}
+
+/* 공통 메인 */
+.ediya-recommend{
+  background:#bae5fb;
+  padding: 42px 0 20px;
+}
+.ediya-recommend-text em{
+  color:#2e437c;
+  font-weight: 700;
+  font-size: 31px;
+  font-style: normal;
+  display: block;
+}
+.go-menu{
+  color: #2e437c;
+  border: 1px solid #2e437c;
+  display: block;
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 31px;
+  width: 91px;
+  height: 31px;
+  text-align: center;
+}
+
+@media all and (max-width:767px){
+/* 모바일 헤더 */
+.app-header{
+  border: 1px solid lightgray;
+}
+/* 햄버거 메뉴 */
+.is-open-menu{
+  padding: 18px 16px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  padding: 0;
+}
+.is-open-menu .ir{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background:url(./../images/button-navigation.svg) no-repeat 50% 50%;
+
+}
+/* 모바일 내비게이션 */
+.app-navigation{
+  background: hsla(225, 57%, 10%, 0.9);
+  color: #fefefe;
+  transform:translateX(105vw);
+  width:100vw;
+  height: 100vh;
+  transition: all 0.2s;
+  position: fixed;
+  top:0;
+  left: 0;
+  backdrop-filter: blur(5px);
+  padding-top: 66px;
+}
+.is-close-menu{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  color:#fefefe;
+  font-size: 2rem;
+}
+.is--active .app-navigation{
+  transform: none;
+}
+.app-navigation li {
+  border-bottom: 1px solid hsla(225, 57%, 30%, 0.5);
+}
+.app-navigation li:last-child{
+  border-bottom: 0; 
+}
+.app-navigation a {
+  display: block;
+  padding: 12px 22px;
+  transition: all 0.4s ease;
+}
+.app-navigation a:hover,
+.app-navigation a:focus {
+  background: #2e437c;
+  /* 마우스 올리면 이 색으로 0.4초 안에 칠해질 것이다. */
+}
+
+/* 모바일 메인 */
+.ediya-recommend-container{
+  padding-bottom:165px;
+  background: #fff;
+}
+.ediya-recommend{
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  color:#14182c;
+}
+.ediya-recommend-text[lang="en"]{
+  font-size: 25px;
+  font-weight: 100;
+  height: 79px;
+}
+.ediya-recommend-text[lang="en"]::after {
+  content: "";
+  display: block;
+  width: 40px;
+  border-top: 1px solid #000;
+  margin: 15px auto;
+}
+
+.ediya-recommend-text{
+  font-size:14px;
+  margin: 0 0 15px 0;
+}
+.ediya-recommend-list{
+  position: relative;
+}
+.ediya-recommend-beverage{
+  position: absolute;
+}
+.ediya-recommend-beverage:first-child{
+  visibility: hidden;
+}
+.ediya-recommend-beverage:last-child{
+  /* position: absolute; */
+  width: 225px;
+  height: 161px;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-60%);
+}
+.ediya-recommend-beverage:last-child img{
+  max-width: 100%;
+  height: auto;
+}
+}
+/* 데스크탑 헤더 */
+@media all and (min-width:768px){
+.app-header-container{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+.app-header{
+  width: 768px;
+}
+.is-open-menu,
+.is-close-menu{
+  display: none;
+}
+.app-navigation ul{
+  display: flex;
+  flex-flow: row nowrap;
+}
+.app-navigation li{
+  color:#2e437c;
+  margin-left:8px;
+}
+
+/* 데스크탑 메인 */
+.ediya-recommend-container{
+  padding-bottom: 260px;
+  margin-top: 0;
+}
+.ediya-recommend{
+  padding: 50px 0 36px;
+}
+.ediya-recommend-text{
+  text-align: center;
+  font-size: 14px;
+}
+.ediya-recommend-text[lang="en"]{
+  font-size: 31px;
+  font-weight: 100;
+  text-align: center;
+  margin: 0 0 15px 0;
+}
+.ediya-recommend-text[lang="en"]::after{
+  content: "";
+  display: block;
+  width: 40px;
+  border-top: 1px solid #000;
+  margin: 30px auto;
+}
+.ediya-recommend-text[lang="en"] em{
+  display: inline;
+}
+.ediya-recommend-list{
+  min-width: 740px;
+  max-width: 740px;
+  margin: 0 auto;
+  position: relative;
+}
+.ediya-recommend-beverage{
+  position: absolute;
+}
+.ediya-recommend-beverage:first-child{
+  left: 0;
+  top: 50%;
+  transform: translateY(-25%);
+}
+.ediya-recommend-beverage img{
+  width: 100%;
+  height: 100%;
+}
+.ediya-recommend-beverage:last-child{
+  right: 0;
+  top: 50%;
+  transform: translate(180px, -20%);
+}
+.go-menu{
+  margin-top:38px;
+  width: 103px;
+}
+}

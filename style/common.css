@@ -45,7 +45,6 @@ body{
     height: 50px;
     padding: 18px 16px;
     background-color: transparent;
-    padding: 0;
   }
   .is-open-menu .ir{
     display: inline-block;
@@ -125,4 +124,3 @@ body{
     color: #24388d;
   }
 }
-
