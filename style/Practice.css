@@ -27,30 +27,88 @@ body{
 .brand a{
   display: block;
 }
-
-/* 공통 메인 */
+/* 추천 음료 공통 */
+@keyframes bounce{
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(5px);
+  }
+}
+/* 추천 음료 컨테이너 */
+.ediya-recommend-container{
+  background-color: var(--theme-bright);
+}
+/* 추천 음료 섹션 */
 .ediya-recommend{
-  background:#bae5fb;
-  padding: 42px 0 20px;
+  background-color: var(--theme-secondary);
+  text-align: center;
+  color: var(--theme-default);
+  
+}
+.ediya-recommend-text{
+  font-size: 1.4rem;
+}
+.ediya-recommend-text[lang="en"]{
+  font-weight: 100;
+  font-size:31px;
+}
+
+.ediya-recommend-text[lang="en"]::After{
+  content: "";
+  width: 40px;
+  border-top: 1px solid var(--theme-primary);
+  display: inline-block;
 }
 .ediya-recommend-text em{
-  color:#2e437c;
-  font-weight: 700;
-  font-size: 31px;
   font-style: normal;
-  display: block;
-}
-.go-menu{
-  color: #2e437c;
-  border: 1px solid #2e437c;
-  display: block;
-  margin: 0 auto;
+  color: var(--theme-primary);
   font-weight: 700;
-  font-size: 14px;
-  line-height: 31px;
-  width: 91px;
-  height: 31px;
-  text-align: center;
+  font-size: 
+}
+/* 추천 음료 리스트 */
+.ediya-recommend-list{
+  position: relative;
+}
+.ediya-recommend-beverage{
+  position: absolute;
+}
+.ediya-recommend-beverage img {
+  max-width: 100%;
+  height: auto;
+  animation: bounce 0.4s ease-in-out infinite alternate;
+}
+.ediya-recommend-beverage:last-child img {
+  animation-delay: 0.2s;
+}
+/* 메뉴보기 링크 */
+.go-menu{
+  position: relative;
+  display: inline-block;
+  color:var(--theme-primary);
+  border: 1px solid var(--theme-primary);
+  padding: 8px 24px;
+}
+
+/* 유튜브 공통 */
+.ediya-youtube-wrapper {
+  margin: 0;
+}
+.iframe-wrapper {
+  width: 100%;
+  height: 0 !important;
+  position: relative;
+}
+.iframe16-9 {
+  padding-top: 56.25%;
+}
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media all and (max-width:767px){
@@ -117,56 +175,33 @@ body{
   /* 마우스 올리면 이 색으로 0.4초 안에 칠해질 것이다. */
 }
 
-/* 모바일 메인 */
+/* 모바일 추천음료 */
 .ediya-recommend-container{
-  padding-bottom:165px;
-  background: #fff;
+  padding-bottom: 195px;
 }
 .ediya-recommend{
-  display: flex;
-  flex-flow: column nowrap;
-  text-align: center;
-  color:#14182c;
+  padding: 25px 0 20px;
 }
-.ediya-recommend-text[lang="en"]{
-  font-size: 25px;
-  font-weight: 100;
-  height: 79px;
+.ediya-recommend-text {
+  margin: 15px 0;
 }
-.ediya-recommend-text[lang="en"]::after {
-  content: "";
+.ediya-recommend-text[lang='en'] {
+  font-size: 2.5rem;
+}
+.ediya-recommend-text em{
   display: block;
-  width: 40px;
-  border-top: 1px solid #000;
-  margin: 15px auto;
-}
-
-.ediya-recommend-text{
-  font-size:14px;
-  margin: 0 0 15px 0;
-}
-.ediya-recommend-list{
-  position: relative;
-}
-.ediya-recommend-beverage{
-  position: absolute;
 }
 .ediya-recommend-beverage:first-child{
-  visibility: hidden;
+  display: none;
 }
 .ediya-recommend-beverage:last-child{
-  /* position: absolute; */
-  width: 225px;
-  height: 161px;
-  top: 30px;
+  top: 15px;
   left: 50%;
+  width: 60%;
   transform: translateX(-60%);
 }
-.ediya-recommend-beverage:last-child img{
-  max-width: 100%;
-  height: auto;
 }
-}
+  
 /* 데스크탑 헤더 */
 @media all and (min-width:768px){
 .app-header-container{
@@ -190,59 +225,43 @@ body{
   margin-left:8px;
 }
 
-/* 데스크탑 메인 */
+/* 데스크탑 추천 음료 */
 .ediya-recommend-container{
   padding-bottom: 260px;
-  margin-top: 0;
 }
-.ediya-recommend{
-  padding: 50px 0 36px;
+.ediya-recommend {
+  padding: 20px 0 30px;
 }
-.ediya-recommend-text{
-  text-align: center;
-  font-size: 14px;
+.ediya-recommend-text {
+  margin: 30px 0;
 }
-.ediya-recommend-text[lang="en"]{
-  font-size: 31px;
-  font-weight: 100;
-  text-align: center;
-  margin: 0 0 15px 0;
+.ediya-recommend-text[lang='en'] {
+  font-size: 3.1rem;
 }
-.ediya-recommend-text[lang="en"]::after{
-  content: "";
+.ediya-recommend-text[lang='en']::after {
   display: block;
-  width: 40px;
-  border-top: 1px solid #000;
-  margin: 30px auto;
+  margin: 30px auto 0;
 }
-.ediya-recommend-text[lang="en"] em{
-  display: inline;
+.ediya-recommend-list {
+  width: 768px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.ediya-recommend-list{
-  min-width: 740px;
-  max-width: 740px;
-  margin: 0 auto;
-  position: relative;
+.ediya-recommend-beverage:first-child {
+  width: 306px;
+  top: -135px;
+  left: -50px;
 }
-.ediya-recommend-beverage{
-  position: absolute;
+.ediya-recommend-beverage:last-child {
+  width: 457px;
+  top: -55px;
+  right: -160px;
 }
-.ediya-recommend-beverage:first-child{
-  left: 0;
-  top: 50%;
-  transform: translateY(-25%);
-}
-.ediya-recommend-beverage img{
-  width: 100%;
-  height: 100%;
-}
-.ediya-recommend-beverage:last-child{
-  right: 0;
-  top: 50%;
-  transform: translate(180px, -20%);
-}
-.go-menu{
-  margin-top:38px;
-  width: 103px;
+/* 데스크탑 공통 영상 */
+.ediya-section-container{
+  background-color: var(--theme-disable);
+  padding: 62px 0 63px;
+  display: flex;
+  flex-flow: row nowrap;
 }
 }
