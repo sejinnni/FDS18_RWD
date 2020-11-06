@@ -1,0 +1,131 @@
+/* 이디야 뉴스 공통 속성 */
+/* .news-notice */
+.news-main{
+  padding: 15px; 
+}
+
+.news-headline{
+  font-size: 2rem;
+  font-weight: 700;
+  /* margin-bottom: 10px; */
+  color: var(--theme-primary);
+  margin: 0;
+}
+.news-headline::before{
+  content:"";
+  width: 8px;
+  height: 16px;
+  display: inline-block;
+  background: url(../images/icon-news-headline.svg) 
+  no-repeat 0 0 / 100% 100%;
+  /* 아이콘을 상자만큼 넓히고 싶다면 cover, contain을 사용하거나 
+  상자 크기의 맞게 백그라운드 사이즈를 조절할 수 있다.  */
+  margin-right: .5em;
+}
+.news-text{
+  margin:10px 0;
+}
+
+/* 공통 검색 폼 */
+/* .news__press-form{
+  background-color: lightgreen;
+  margin-bottom: 17px;
+  color: var(--theme-primary);
+} */
+.news__press-form fieldset{
+  margin:0;
+  bottom: 0;
+  margin: 0;
+}
+.press-search-container{
+  padding: 5px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: relative;
+}
+.news__press-form [name="newSelect"]{
+  /* background-color: var(--theme-bright2); */
+  margin-right: 15px;
+  /* border: 0;
+  border-radius: 3px; */
+  width: 80px;
+  height: 26px;
+}
+/* .press-search-container select,
+.press-search-container .keyword{
+  border: 0;
+} */
+
+.news__press-form [name="newsKeyword"]{
+  /* padding: 6px;  */
+  height: 26px;
+  flex-grow: 1;
+  border:0;
+  padding: 2px 20px 2px 0.5em;
+  /* background: transparent; */
+  border-bottom: 1px solid var(--theme-dark);
+}
+.news__press-form .button-search{
+  background-color: transparent;
+  position: absolute;
+  top:50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  border: 0;
+}
+
+.news__press-form .icon-search{
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../images/icon-search.svg) no-repeat 0 0 
+  /100% 100%;
+}
+
+.news__press-table{
+  color: var(--theme-primary);
+  border-top: 2px solid var(--theme-primary);
+  border-bottom: 2px solid var(--theme-primary);
+  border-collapse:collapse;
+}
+.news__press-table th{
+  padding: 10px;
+}
+
+.news__press-table th,
+.news__press-table td{
+  border-bottom: 1px solid currentColor;
+}
+
+.press-thumbnail .press-article{
+  padding: 0 7px;
+}
+.press-thumbnail .press-date{
+  padding: 0 11px;
+}
+/* 모바일 공지사항  */
+@media all and (max-width: 767px){
+  
+  .news__press-table .press-thumbnail{
+    display: none;
+  }
+}
+
+/* 데스크탑 공지사항 */
+@media all and (min-width: 768px){
+  .news-notice{
+    width: 740px; 
+    padding: 15px; 
+    margin: 0 auto;
+  }
+
+  /* 데스크탑 검색 폼 */
+  .news__press-form{
+    width: 440px;
+    margin-left: auto; 
+  }
+}
